@@ -307,8 +307,8 @@ function CourseVideos() {
   };
 
   const videoPaths = {
-    1: "./../Videos/Who_Am_I_.mp4", // replace with the actual path to the video in your project
-    2: "./../Videos/Who_Suffers_.mp4", // replace with the actual path to the video in your project
+    1: "./../Videos/Who Am I_.mov", // replace with the actual path to the video in your project
+    2: "path/to/module2/video.mp4", // replace with the actual path to the video in your project
   };
 
   return (
@@ -337,6 +337,7 @@ function CourseVideos() {
               </p>
               {sidebarItems.map((item, index) => (
                 <div
+                  style={{ color: "001040" }}
                   key={index}
                   className="card text-dark my-2 p-2 border-0 sideshadow"
                 >
@@ -576,7 +577,7 @@ function CourseVideos() {
 
                         <div className="d-flex justify-content-end">
                           <button
-                            style={{color:"001040"}}
+                            style={{ color: "001040" }}
                             className="nxtbtn rounded-2 my-5 px-5"
                             onClick={() => {
                               if (currentDepth === 1) {
@@ -662,42 +663,49 @@ function CourseVideos() {
               {!loading && !error && activeContent === "video" && (
                 <div>
                   <h4>Video Content</h4>
+                  {sidebarItems
+                    .filter((item) => item.depth === "2")
+                    .map((item, index) => (
+                      <div key={index}>
+                        {/* Use the response HTML structure for embedding Vimeo video */}
+                        <div
+                          style={{
+                            position: "relative",
+                            width: "100%",
+                            height: 0,
+                            paddingBottom: "56.25%", // Maintain the 16:9 aspect ratio
+                          }}
+                        >
+                          <div
+                            dangerouslySetInnerHTML={{
+                              __html: item.page_content.replace(/<\/?p>/g, ""), // Clean up <p> tags
+                            }}
+                            style={{
+                              position: "absolute", // Positioning the iframe absolutely to fill the container
+                              top: 0,
+                              left: 0,
+                              width: "100%",
+                              height: "100%",
+                            }}
+                          ></div>
+                        </div>
+                      </div>
+                    ))}
 
-                  {/* Check the module and load the corresponding video */}
-                  {parseInt(module) === 1 ? (
-                    <div>
-                      <video width="100%" height="400" controls>
-                        <source src={`./../Videos/sample.mp4`} type="video/mp4" />
-                        Your browser does not support the video tag.
-                      </video>
-                      <div className="d-flex justify-content-end my-3">
-                        <button
-                          style={{ backgroundColor: "#6705AD", color: "white" }}
-                          className="btn prevbtn"
-                          onClick={handleNext}
-                        >
-                          Next
-                        </button>
-                      </div>
+                  {/* Check if there is any video content and then show the "Next" button after all videos */}
+                  {sidebarItems.some((item) => item.depth === "2") && (
+                    <div className="d-flex justify-content-end my-3">
+                      <button
+                        style={{
+                          backgroundColor: "#001040",
+                          color: "white",
+                        }}
+                        className="btn prevbtn"
+                        onClick={handleNext}
+                      >
+                        Next
+                      </button>
                     </div>
-                  ) : parseInt(module) === 2 ? (
-                    <div>
-                      <video width="100%" height="400" controls>
-                        <source src={videoPaths[2]} type="video/mp4" />
-                        Your browser does not support the video tag.
-                      </video>
-                      <div className="d-flex justify-content-end my-3">
-                        <button
-                          style={{ backgroundColor: "#001040", color: "white" }}
-                          className="btn prevbtn"
-                          onClick={handleNext}
-                        >
-                          Next
-                        </button>
-                      </div>
-                    </div>
-                  ) : (
-                    <p>No video available for this module.</p>
                   )}
                 </div>
               )}

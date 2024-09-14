@@ -46,7 +46,7 @@
 }
 
 .sidebartext:hover {
-  color: #6705ad;
+  color: #001040;
   box-shadow: 1px 1px 2px 1px rgb(195, 194, 194);
   border-radius: 5px;
   border: 0px;
@@ -60,7 +60,7 @@
 }
 
 .numberclr {
-  color: #6705ad;
+  color: #001040;
   font-size: 1.2rem;
 }
 
@@ -114,7 +114,7 @@
 }
 
 .circle.answered {
-  background-color: #6705ad; /* Green background for answered questions */
+  background-color: #001040; /* Green background for answered questions */
   color: #fff;
 }
 
@@ -127,7 +127,7 @@
 }
 
 .numberclr {
-  color: #6705ad;
+  color: #001040;
   font-size: 1.2rem;
 }
 
@@ -206,7 +206,7 @@ tr {
 }
 
 .sidebartext:hover {
-  color: #6705ad;
+  color: #001040;
   box-shadow: 1px 1px 2px 1px rgb(195, 194, 194);
   border-radius: 5px;
   border: 0px;
@@ -219,16 +219,14 @@ tr {
   border: 1px solid orange;
 }
 
-.ansreviewpara{
+.ansreviewpara {
   font-size: 16px;
-
 }
-.quizrev{
-  color: #6705ad;
-  
+.quizrev {
+  color: #001040;
 }
 .numberclr {
-  color: #6705ad;
+  color: #001040;
   font-size: 1.2rem;
 }
 
@@ -251,7 +249,8 @@ tr {
   }
   .secondpartquiz {
     margin: 0px 0px;
-  }.quizparttext{
+  }
+  .quizparttext {
     text-align: justify;
   }
 }
@@ -284,7 +283,7 @@ tr {
 }
 
 .circle.answered {
-  background-color: #6705ad; /* Green background for answered questions */
+  background-color: #001040; /* Green background for answered questions */
   color: #fff;
 }
 
@@ -297,7 +296,7 @@ tr {
 }
 
 .numberclr {
-  color: #6705ad;
+  color: #001040;
   font-size: 1.2rem;
 }
 
@@ -376,4 +375,11 @@ max-width: 200px;
     height: auto; /* Maintain the aspect ratio automatically */
     max-height: 200px; /* Ensures height doesn't exceed 200px */
   }
+}
+.sidec {
+  text-decoration: none;
+}
+
+.sidec:hover {
+  color: #001040;
 }

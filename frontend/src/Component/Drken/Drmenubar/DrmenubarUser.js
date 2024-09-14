@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { NavLink, useNavigate, useParams } from "react-router-dom";
 import "./Drmenubar.css";
-import loginimg from "../../../Asset/profile.png";
+import loginimg from "../../../Asset/profile1.png";
 import Mainlogo from "../../../Asset/image 39.png";
 import axios from "axios";
 
@@ -145,6 +145,7 @@ function DrmenubarUser() {
             </div>
             <Dropdown className="ms-4">
               <Dropdown.Toggle
+                style={{ color: "#001040" }}
                 as="a"
                 className="d-flex align-items-center p-0"
                 id="dropdown-custom-components"

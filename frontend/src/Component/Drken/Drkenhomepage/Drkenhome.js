@@ -4,9 +4,9 @@ import { Link, useLocation } from 'react-router-dom';
 import Overview from '../Overview/Overview';
 import Lessons from '../Lessons/Lessons';
 import Instructors from '../Instructors/Instructors';
-import icon1 from "../../../Asset/openbook.png";
-import icon3 from "../../../Asset/personicon.png";
-import icon2 from "../../../Asset/clock.png";
+import icon1 from "../../../Asset/tabler_book1.png";
+import icon3 from "../../../Asset/gravity-ui_person.png";
+import icon2 from "../../../Asset/mingcute_time-line.png";
 
 function Drkenhome() {
   const location = useLocation();

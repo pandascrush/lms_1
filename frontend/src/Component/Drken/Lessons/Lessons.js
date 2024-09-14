@@ -59,7 +59,7 @@ function Lessons() {
             <Link
               to={`/ken/1/${e.moduleId}/${id}`}
               className="col-sm-12 lessonview text-decoration-none"
-              style={{ color: "black" }}
+              style={{ color: "#001040" }}
             >
               <div className="col-lg-4 d-flex flex-column justify-content-center">
                 <img
